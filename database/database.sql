@@ -20,10 +20,10 @@ nombre varchar(100) not null,
 CONSTRAINT pk_categorias PRIMARY KEY(id)
 )ENGINE=InnoDb;
 
-INSERT INTO categorias VALUES(null, 'Manga corta');
-INSERT INTO categorias VALUES(null, 'Tirantes');
-INSERT INTO categorias VALUES(null, 'Manga larga');
-INSERT INTO categorias VALUES(null, 'Sudaderas');
+INSERT INTO categorias VALUES(null, 'Guitarras');
+INSERT INTO categorias VALUES(null, 'Bajos');
+INSERT INTO categorias VALUES(null, 'Teclados');
+INSERT INTO categorias VALUES(null, 'Audio');
 
 
 CREATE TABLE productos(
@@ -59,6 +59,7 @@ CREATE TABLE lineas_pedido(
 id int auto_increment not null,
 pedido_id int not null,
 producto_id int not null,
+unidades int(255) not null,
 CONSTRAINT pk_lineas_pedidos PRIMARY KEY(id),
 CONSTRAINT fk_linea_pedido FOREIGN KEY(pedido_id) REFERENCES pedidos(id),
 CONSTRAINT fk_linea_producto FOREIGN KEY(producto_id) REFERENCES productos(id)
