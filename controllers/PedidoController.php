@@ -48,7 +48,7 @@ class pedidoController{
         if(isset($_SESSION['identity'])){
             $identity = $_SESSION['identity'];
             $pedido = new Pedido();
-            $pedido->setUsuarioid($identity->id);
+            $pedido->setUsuarioId($identity->id);
             $pedido = $pedido->getOneByUser();
 
             $pedido_productos = new Pedido();
@@ -68,5 +68,27 @@ class pedidoController{
         $pedidos = $pedido->getAllByUser();
 
         require_once 'views/pedido/mis_pedidos.php';
+    }
+
+    public function detalle(){
+        Utils::isIdentity();
+
+        if(isset($_GET['id'])){
+            $id = $_GET['id'];
+
+            // Sacar datos del pedido
+            $pedido = new Pedido();
+            $pedido->setId($id);
+            $pedido = $pedido->getOne();
+
+            // Sacar los productos
+            $pedido_productos = new Pedido();
+            $productos = $pedido_productos->getProductosByPedido($id);
+
+            require_once 'views/pedido/detalle.php';
+        }else{
+            header('Location:'.base_url.'pedido/mis_pedidos');
+        }
+        
     }
 }
