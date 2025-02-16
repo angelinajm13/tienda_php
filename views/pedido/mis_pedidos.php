@@ -1,9 +1,14 @@
-<?php if ($pedidos && $pedidos->num_rows > 0): ?>
+<?php if(isset($gestion)): ?>
+    <h1>Gestionar pedidos</h1>
+<?php else: ?>
+    <h1>Mis pedidos</h1>
+<?php endif; ?>
     <table>
         <tr>
             <th>Num. de pedido</th>
             <th>Costo</th>
             <th>Fecha</th>
+            <th>Estado</th>
         </tr>
         <?php 
             while ($ped = $pedidos->fetch_object()): ?>
@@ -17,9 +22,11 @@
                     <td>
                         <?=$ped->fecha ?>
                     </td>
+                    <td>
+                        <?=Utils::showStatus($ped->estado) ?> <br/>
+                    </td>
                 </tr>
         <?php endwhile; ?>
     </table>
-<?php else: ?>
-    <p>No hay pedidos disponibles.</p>
-<?php endif; ?>
+
+
