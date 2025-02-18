@@ -15,8 +15,10 @@
         </form>
         <br/>
     <?php endif; ?>
-
-
+        <h3>Datos del usuario</h3>
+        Nombre: <?= $pedido->nombre ?> <br>
+        Apellidos: <?= $pedido->apellidos ?> <br>
+        email: <?= $pedido->email ?> <br>
 
         <h3>Direccion de envio</h3>
         Provincia: <?=$pedido->provincia?> <br/>

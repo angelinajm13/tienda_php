@@ -110,7 +110,7 @@ class Usuario{
             $hash = $usuario->passw;
 
             // Depuración: Verificar valores
-            var_dump($password, $hash);
+
             $verify = password_verify($password, $hash);
             
             if($verify){

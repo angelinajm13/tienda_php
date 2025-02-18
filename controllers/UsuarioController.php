@@ -62,6 +62,7 @@ class usuarioController{
             // crear una sesión
         }
         header("Location:".base_url);
+        exit();
     }
     public function logout(){
         if(isset($_SESSION['identity'])){
