@@ -12,7 +12,7 @@
 				<div id="logo">
 					<img src="<?=base_url?>assets/img/camiseta.png" alt="Camiseta Logo" />
 					<a href="<?=base_url?>">
-						Tienda de camisetas
+						Instrumentos Musicales
 					</a>
 				</div>
 			</header>
