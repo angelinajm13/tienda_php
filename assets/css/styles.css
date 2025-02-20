@@ -8,6 +8,7 @@
 
 body{
     background: url(../img/bg.png);
+  
 }
 
 a{
@@ -281,9 +282,29 @@ button{
     padding-top: 0px;
 }
 
+@media (max-width: 768px) {
+    #container {
+        width: 100%;
+        margin: 0;
+      }
+    /* Aside se comporta como bloque, sin float, 100% ancho */
+    #lateral {
+      width: 100%;
+      float: none;
+      margin-left: 0;
+      margin-top: 20px;
+    }
+    
+    /* También aseguramos que el contenido central ocupe 100% */
+    #central {
+      width: 100%;
+      float: none;
+    }
+  }
+
 /*PRODUCTOS*/
 .product{
-    width: 30%;
+    width: 25%;
     float:left;
     margin-left: 10px;
     margin-right: 10px;
@@ -301,8 +322,9 @@ button{
 }
 
 .product img{
-    height:170px;
+    height:140px; 
     margin-bottom: 10px;
+    
 }
 
 .img_carrito{
@@ -321,6 +343,7 @@ button{
     color: #555;
     margin-bottom: 10px;
 }
+
 
 #detail-product{
     width: 100%;
